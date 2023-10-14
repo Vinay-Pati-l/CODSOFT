@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <style>
+         div{
+             text-align: center;
+             border: 2px green solid;
+             width: fit-content;
+             padding: 10px 20px 20px 20px;
+             border-radius: 20px;
+             margin: 0 auto;  
+        } 
+    </style>
+</head>
+<body>
+    <div>
+
+        <h1>Password Generator</h1>
+        
+        <form action="/generate" method="post">
+            Password Length: <input type="number" name="length" min="8" required><br><br>
+            <input type="submit" value="Generate Password">
+        </form>
+        
+        {% if password %}
+        <h2>Generated Password:</h2>
+        <textarea rows="1" cols="50" readonly>{{ password }}</textarea><br><br>
+        <form action="/index">
+            <input type="submit" value="Reset">
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
